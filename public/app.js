@@ -150,7 +150,7 @@ function renderModal() {
     const cs = commentsOf(ev);
     body = `<div class="m-body cmt-list">
       ${cs.map((c) => c.sys
-        ? `<div class="cmt"><div class="pic" style="background:#2b8296">i</div><div class="cmt-body"><div class="cmt-sys">${esc(c.u)} ${esc(c.x)} · ${esc(c.t)}</div></div></div>`
+        ? `<div class="cmt"><div class="pic" style="background:#1F3A5F">i</div><div class="cmt-body"><div class="cmt-sys">${esc(c.u)} ${esc(c.x)} · ${esc(c.t)}</div></div></div>`
         : `<div class="cmt"><div class="pic">${esc(initial(c.u))}</div><div class="cmt-body"><div class="cmt-name">${esc(c.u)}<span class="cmt-time">${esc(c.t)}</span></div><div class="cmt-text">${esc(c.x)}</div></div></div>`
       ).join('')}
     </div>
@@ -220,7 +220,7 @@ function showShareBox(text, tip) {
   const card = document.createElement('div');
   card.style.cssText = 'background:#fff;border-radius:16px;width:100%;max-width:420px;padding:18px;box-shadow:0 8px 30px rgba(0,0,0,.25)';
   const h = document.createElement('div');
-  h.style.cssText = 'font-size:15px;font-weight:700;color:#0e4e5a;margin-bottom:10px';
+  h.style.cssText = 'font-size:15px;font-weight:700;color:#1F3A5F;margin-bottom:10px';
   h.textContent = tip || '複製下面文字，貼到群組邀請大家';
   const ta = document.createElement('textarea');
   ta.readOnly = true; ta.value = text;
@@ -229,7 +229,7 @@ function showShareBox(text, tip) {
   row.style.cssText = 'display:flex;gap:8px;margin-top:12px';
   const copyBtn = document.createElement('button');
   copyBtn.textContent = '複製文字';
-  copyBtn.style.cssText = 'flex:2;background:#2b8296;color:#fff;border:none;border-radius:10px;padding:12px 0;font-size:15px;font-weight:700;cursor:pointer';
+  copyBtn.style.cssText = 'flex:2;background:#1F3A5F;color:#fff;border:none;border-radius:10px;padding:12px 0;font-size:15px;font-weight:700;cursor:pointer';
   const closeBtn = document.createElement('button');
   closeBtn.textContent = '關閉';
   closeBtn.style.cssText = 'flex:1;background:#f1f2f4;color:#4a4f55;border:none;border-radius:10px;padding:12px 0;font-size:15px;cursor:pointer';
@@ -295,7 +295,7 @@ async function promoShare() {
     const t = ev.time || ev.date;
     return `▶ ${ev.title}\n   📅 ${t}\n   📍 ${ev.place}\n   👥 ${cnt}/${ev.cap} 人`;
   });
-  const header = '🎉 真媽機群組活動佈告欄 ◈ 最新揪團';
+  const header = '🎉 姐妹們的聚會好黑皮 ◈ 最新揪團';
   const footer = '點進佈告欄報名 👇\n' + location.origin + '/';
   const text = header + '\n\n' + lines.join('\n\n') + '\n\n' + footer;
 
